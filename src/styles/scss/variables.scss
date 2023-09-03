@@ -1,0 +1,181 @@
+//+ Colors
+
+$color--background-primary: #080601;
+$color--background-secondary: #19202b;
+
+$color--primary: #ff9900;
+$color--secondary: #ffffff;
+
+$color--grey1: #b1b1b1;
+$color--grey2: #b4b4b4;
+$color--grey3: #707070;
+$color--grey4: #40444a;
+$color--grey5: #171717;
+$color--grey6: #656565;
+$color--grey7: #2f2f2f;
+$color--grey8: #bababa;
+$color--black: #000000;
+$color--white: #ffffff;
+$color--black1: #11171f;
+
+$color--green: #29ef12;
+
+$color--success: #2d9721;
+$color--error: #ff4646;
+
+$color-variants: (
+  'inherit': inherit,
+  'primary': $color--primary,
+  'secondary': $color--secondary,
+  'background-primary': $color--background-primary,
+  'background-secondary': $color--background-secondary,
+  'grey1': $color--grey1,
+  'grey2': $color--grey2,
+  'grey3': $color--grey3,
+  'grey4': $color--grey4,
+  'grey5': $color--grey5,
+  'grey6': $color--grey6,
+  'grey7': $color--grey7,
+  'grey8': $color--grey8,
+  'black': $color--black,
+  'white': $color--white,
+  'black1': $color--black1,
+  'success': $color--success,
+  'error': $color--error,
+  'green': $color--green,
+  'red': $color--error
+) !default;
+
+//+ Typography
+
+$font-size--xxs: 12px;
+$font-size--xs: 14px;
+$font-size--sm: 16px;
+$font-size--md: 18px;
+$font-size--lg: 24px;
+$font-size--xl: 32px;
+$font-size--xxl: 48px;
+$font-size--xxxl: 88px;
+
+$base-line-height--xxs: 18px;
+$base-line-height--xs: 20px;
+$base-line-height--sm: 24px;
+$base-line-height--md: 24px;
+$base-line-height--lg: 36px;
+$base-line-height--xl: 40px;
+$base-line-height--xxl: 60px;
+$base-line-height--xxxl: 96px;
+
+$text-font-family: 'Roboto', sans-serif;
+
+$header-font-family: 'Poppins', sans-serif;
+
+$text-weight-light: 300 !default;
+$text-weights-normal: 400 !default;
+$text-weights-medium: 500 !default;
+$text-weights-semi-bold: 600 !default;
+$text-weights-bold: 700 !default;
+
+$text-weights: (
+  'light': $text-weight-light,
+  'normal': $text-weights-normal,
+  'medium': $text-weights-medium,
+  'semibold': $text-weights-semi-bold,
+  'bold': $text-weights-bold
+) !default;
+
+//+ Rest
+
+//+ Colors
+$base-border--primary: $color--grey1 !default;
+$base-border--secondary: $color--grey2 !default;
+$base-border--dark: $color--grey3 !default;
+
+$shadow-color--primary: rgba(0, 0, 0, 0.1) !default;
+
+//+ General
+
+$body-background-color: $color--background-primary;
+
+//- General
+
+//- Colors
+
+//+ Container
+
+$base-directions: ('top', 'right', 'bottom', 'left') !default;
+$base-sizes: ('xxs', 'xs', 'sm', 'md', 'lg', 'xl') !default;
+$base-sizes-modifiers: (0.5, 0.5, 1, 2, 3, 4) !default;
+$base-default-size: 'sm' !default;
+$base-default-index: index($base-sizes, $base-default-size) !default;
+$base-padding: 8px !default;
+$base-padding-sizes: ();
+
+@each $size in $base-sizes {
+  $base-padding-sizes: map-merge(
+    $base-padding-sizes,
+    (
+      $size:
+        nth($base-sizes-modifiers, index($base-sizes, $size)) *
+        $base-padding
+    )
+  );
+}
+
+$base-container: 1200px !default;
+
+$base-radius: 3px !default;
+
+$base-size--xs: 16px !default;
+$base-size--sm: 24px !default;
+$base-size--md: 32px !default;
+$base-size--lg: 40px !default;
+$base-size--xl: 48px !default;
+
+$screen-xxs: 320px !default;
+$screen-xs: 440px !default;
+$screen-sm: 768px !default;
+$screen-md: 1080px !default;
+$screen-lg: 1200px !default;
+$screen-xl: 1600px !default;
+
+//- Container
+
+//+ Modal
+
+$modal-backdrop--background: rgba(0, 0, 0, 0.4) !default;
+
+$modal-dialog--width-lg: $base-container * 0.9 !default;
+$modal-dialog--width-md: $base-container * 0.75 !default;
+$modal-dialog--width-sm: $base-container * 0.5 !default;
+$modal-dialog--width-xs: $base-container * 0.3 !default;
+$modal-dialog-backdrop--background: $modal-backdrop--background !default;
+
+//- Modal
+
+//+ Section
+
+$section--border-radius: $base-radius !default;
+
+//- Section
+
+//+ Shadow
+
+$shadow-color: $color--grey1 !default;
+
+$shadow--xs: 1px 1px 1px 0px $shadow-color !default;
+$shadow--sm: 1px 1px 3px 0 $shadow-color !default;
+$shadow--md: 3px 3px 6px 0 $shadow-color !default;
+$shadow--lg: 6px 6px 12px 0 $shadow-color !default;
+
+//- Shadow
+
+//- Table
+
+//+ Transitions
+
+$default-transition: 0.2s ease !default;
+
+//- Transitions
+
+//- Tooltip

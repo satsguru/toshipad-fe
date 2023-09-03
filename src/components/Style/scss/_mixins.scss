@@ -1,0 +1,128 @@
+@import '../../../styles/scss/variables';
+
+// @required
+// $base-default-size
+// $base-padding-sizes
+// $base-directions
+// $base-sizes
+
+@mixin sizes-defaults($property, $options: $base-padding-sizes) {
+  & {
+    #{varname-key($property)}: map-get($options, $base-default-size);
+  }
+}
+
+@mixin sizes-variables($property, $options: $base-padding-sizes) {
+  & {
+    @each $key, $value in $options {
+      #{varname-key(#{$property}-#{$key})}: $value;
+    }
+  }
+}
+
+@mixin sizes-classes($property, $options: $base-padding-sizes) {
+  @each $key, $value in $options {
+    &.#{selector('size')}-#{$key} {
+      #{varname-key($property)}: #{$value};
+    }
+  }
+}
+
+@mixin sizes($property, $options: $base-padding-sizes) {
+  @include sizes-defaults($property, $options);
+  @include sizes-variables($property, $options);
+  @include sizes-classes($property, $options);
+}
+
+@mixin children-sizes($property, $options: $base-padding-sizes) {
+  & > * {
+    #{varname-key($property)}: map-get($options, $base-default-size);
+  }
+
+  @each $key, $value in $options {
+    &.#{selector($property)}-#{$key} > * {
+      #{varname-key($property)}: #{$value};
+    }
+  }
+}
+
+@mixin directions($scope, $root: '') {
+  @each $value in $base-directions {
+    $selector: selector(#{$scope}-#{$value});
+    $property: #{$scope}-#{$value};
+
+    @if $scope == 'border-width' {
+      $property: border-#{$value}-width;
+    }
+
+    #{$root}.#{$selector} {
+      #{$property}: varname-var($scope);
+    }
+  }
+}
+
+@mixin directions-with-sizes($scope, $root: '') {
+  @each $value in $base-directions {
+    $selector: selector(#{$scope}-#{$value});
+    $property: #{$scope}-#{$value};
+
+    @each $key, $value in $base-padding-sizes {
+      $subselector: #{$selector}#{selector(#{$key})};
+      #{$root}.#{$subselector} {
+        #{$property}: varname-var(#{$scope}#{selector(#{$key})});
+      }
+    }
+  }
+}
+
+@mixin grid-width($size, $columns) {
+  flex: 0 1 auto;
+  max-width: #{((calc($size / $columns)) * 100) + '%'};
+  width: #{((calc($size / $columns)) * 100) + '%'};
+}
+
+@mixin grid-order($i) {
+  order: #{$i};
+}
+
+@mixin grid-offset($size, $columns) {
+  margin-left: #{((calc($size / $columns)) * 100) + '%'};
+}
+
+@mixin grid() {
+  $grid-columns: 12;
+  $sizes: $base-sizes;
+  $screen-sizes: (
+    'xxs': $screen-xxs,
+    'xs': $screen-xs,
+    'sm': $screen-sm,
+    'md': $screen-md,
+    'lg': $screen-lg,
+    'xl': $screen-xl
+  );
+
+  @each $size in $sizes {
+    @media only screen and (min-width: map-get($screen-sizes, $size)) {
+      .#{selector('width')}-#{$size} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+      }
+
+      @for $i from 1 through $grid-columns {
+        .#{selector('width')}-#{$size}-#{$i} {
+          @include grid-width($i, $grid-columns);
+        }
+        .#{selector('order')}-#{$size}-#{$i} {
+          @include grid-order($i);
+        }
+      }
+
+      @for $i from 0 through $grid-columns {
+        .#{selector('offset')}-#{$size}-#{$i} {
+          @include grid-offset($i, $grid-columns);
+        }
+      }
+    }
+  }
+}

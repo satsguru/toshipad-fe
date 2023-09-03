@@ -1,0 +1,165 @@
+@import 'src/styles/scss/variables';
+
+.hero {
+  position: relative;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-top: 111px;
+  z-index: 1;
+}
+
+.planet {
+  position: absolute;
+  width: 1280px;
+  height: auto;
+}
+
+.h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 88px;
+  line-height: 125%;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+
+  background: linear-gradient(91.1deg, #b3b0ae 5.25%, #ffffff 88.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  position: relative;
+  padding-top: 150px;
+}
+
+.h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  position: relative;
+  max-width: 810px;
+  margin: 0 auto;
+  margin-top: 16px;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.leftBtn {
+  width: auto;
+  height: 56px;
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  border-radius: 66px;
+
+  padding: 0 32px;
+  transition: opacity 0.3s;
+}
+
+.leftBtn:hover {
+  opacity: 0.8;
+}
+
+.leftBtn p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #000000;
+}
+
+.leftBtn span {
+  color: #ffffff;
+}
+
+.rightBtns {
+  display: flex;
+  gap: 16px;
+}
+
+.rightBtn {
+  width: 56px;
+  height: 56px;
+  min-width: 0px;
+  background: #161616;
+  border-radius: 66px;
+}
+
+.rightBtn:hover {
+  background: #161616aa;
+}
+
+.rightBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.rightBtn span {
+  color: #ffffff;
+}
+
+@media (max-width: 1380px) {
+  .planet {
+    left: 50%;
+    top: 0px;
+    translate: -50% 0;
+  }
+}
+
+@media (max-width: 1150px) {
+  .hero {
+    margin-top: 80px;
+  }
+
+  .h1 {
+    font-size: 48px;
+    line-height: 120%;
+    padding-top: 100px;
+  }
+
+  .h3 {
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom {
+    display: block;
+    margin-top: 24px;
+  }
+
+  .leftBtn {
+    width: 100%;
+  }
+
+  .rightBtns {
+    justify-content: center;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .h1 {
+    padding-top: 80px;
+  }
+
+  .hero {
+    margin-top: 40px;
+  }
+}

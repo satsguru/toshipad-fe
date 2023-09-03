@@ -1,0 +1,69 @@
+@import 'styles/scss/variables';
+
+.heroCont {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding: 80px;
+  gap: 16px;
+  justify-content: center;
+  background-color: $color--grey5;
+  border-radius: 32px;
+  margin-bottom: 16px;
+  @media (max-width: 450px) {
+    margin: 0 calc(-50vw + 50%);
+    width: 100vw;
+    border-radius: unset;
+    padding: 16px;
+  }
+}
+
+.heroHeader {
+  z-index: 1;
+}
+
+.heroDescription {
+  max-width: 620px;
+  @media (max-width: 450px) {
+    padding: 0 26px;
+  }
+}
+
+.dots {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+.dotsRotated {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  transform: rotate(180deg);
+  @media (max-width: 450px) {
+    display: none;
+  }
+}
+
+.dotsMobile {
+  display: none;
+  @media (max-width: 450px) {
+    display: initial;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+  }
+}
+.dotsMobileRotated {
+  display: none;
+  @media (max-width: 450px) {
+    display: initial;
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    transform: rotate(180deg);
+  }
+}

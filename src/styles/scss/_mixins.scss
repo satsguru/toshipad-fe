@@ -1,0 +1,35 @@
+// background-color-variant
+
+$background-color-variant--selector: selector('background-color-variant');
+
+@mixin background-color-variant--selectors() {
+  @each $name, $value in $color-variants {
+    &.#{$background-color-variant--selector}-#{$name} {
+      background-color: $value;
+    }
+  }
+}
+
+// text-color-variant
+
+$text-color-variant--selector: selector('text-color-variant');
+
+@mixin text-color-variant--selectors() {
+  @each $name, $value in $color-variants {
+    &.#{$text-color-variant--selector}-#{$name} {
+      color: $value;
+    }
+  }
+}
+
+// border-color-variant
+
+$border-color-variant--selector: selector('border-color-variant');
+
+@mixin border-color-variant--selectors() {
+  @each $name, $value in $color-variants {
+    &.#{$border-color-variant--selector}-#{$name} {
+      border-color: $value !important;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import 'src/styles/scss/variables';
+
+.main {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+
+.inside {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 440px;
+  height: 260px;
+
+  border-radius: 24px;
+  background: #101010;
+
+  padding: 40px;
+}
+
+.title {
+  font-size: 22px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  line-height: 28px;
+
+  background: linear-gradient(91.1deg, #b3b0ae 5.25%, #ffffff 88.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.desc {
+  font-size: 14px;
+  font-family: 'Roboto';
+  line-height: 20px;
+  max-width: 360px;
+
+  color: #bababa;
+
+  margin-top: 16px;
+}
+
+.bottomButtons {
+  position: relative;
+  margin-top: 24px;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.bottomButtons .btn {
+  width: auto;
+  height: 48px;
+  padding: 0px 32px;
+
+  border-radius: 66px;
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.bottomButtons .rightBtn {
+  background: #16161600;
+}
+
+.bottomButtons .btn:hover {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  opacity: 0.8;
+}
+
+.bottomButtons .rightBtn:hover {
+  background: #16161600;
+}
+
+.bottomButtons .btn p {
+  color: #000;
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  text-transform: none;
+}
+
+.bottomButtons .rightBtn p {
+  color: #fff;
+}
+
+.bottomButtons .btn span {
+  color: #fff;
+}
+
+@media (max-width: 920px) {
+  .inside {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    padding: 16px;
+  }
+
+  .title {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+
+    background: #ffffff;
+    background-clip: text;
+  }
+
+  .desc {
+    max-width: 290px;
+    margin-top: 8px;
+  }
+
+  .bottomButtons {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding: 16px;
+
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bottomButtons .btn {
+    width: 100%;
+    flex: 100%;
+  }
+
+  .bottomButtons .rightBtn {
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,1 @@
+export { RightTab } from './RightTab'

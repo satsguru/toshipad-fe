@@ -1,0 +1,37 @@
+@import 'styles/scss/variables';
+
+.timer-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background-color: $color--background-primary;
+  @media (max-width: 450px) {
+    padding: 12px;
+  }
+}
+
+.timer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remaining-time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.time-units {
+  font-family: $header-font-family !important;
+}
+.time-values {
+  font-family: $header-font-family !important;
+  font-weight: $text-weights-bold;
+  @media (max-width: 450px) {
+    font-weight: $text-weights-semi-bold;
+  }
+}

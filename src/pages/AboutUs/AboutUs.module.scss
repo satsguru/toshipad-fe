@@ -1,0 +1,16 @@
+@import 'src/styles/scss/variables';
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.shadow1 {
+  position: absolute;
+  right: -550px;
+  top: -200px;
+  width: 1204px;
+  height: auto;
+  z-index: 0;
+}

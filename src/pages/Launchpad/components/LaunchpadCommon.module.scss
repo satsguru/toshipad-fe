@@ -1,0 +1,55 @@
+@import 'styles/scss/variables';
+
+.gradientText {
+  background: linear-gradient(to right, #b3b0ae, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.salesCont {
+  display: flex;
+  width: 100%;
+  gap: 32px;
+}
+
+.salesCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  @media (max-width: 992px) {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    margin: 0 calc(-50vw + 50%);
+    padding: 0 calc(50vw - 50%);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+.salesCards::-webkit-scrollbar {
+  display: none;
+}
+.singleCard {
+  @media (max-width: $screen-sm) {
+    justify-content: center;
+  }
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding-top: 80px !important;
+  padding-bottom: 0 !important;
+
+  //only to adjust the page to existing rest part of app's code
+  width: 90%;
+  max-width: 1136px;
+  margin: 0 auto;
+  //
+
+  @media (max-width: 450px) {
+    padding-top: unset !important;
+  }
+}

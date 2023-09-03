@@ -1,0 +1,304 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 36px;
+}
+
+.title {
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  line-height: 24px;
+
+  background: linear-gradient(91.1deg, #b3b0ae 5.25%, #ffffff 88.5%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.desc {
+  font-size: 14px;
+  font-family: 'Roboto';
+  line-height: 20px;
+
+  color: #818181;
+}
+
+.qrInfo {
+  width: 100%;
+  padding: 32px;
+  border-radius: 16px;
+  background: #171717;
+  margin-top: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.qrInfo .qrLeft {
+  display: flex;
+  gap: 24px;
+}
+
+.qrInfo .copy {
+  width: 24px;
+  height: 24px;
+  margin-top: 32px;
+
+  transition: opacity 0.3s;
+}
+
+.qrInfo .copy:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.qrInfo .qrLeft .qrCode {
+  width: 88px;
+  height: 88px;
+}
+
+.qrInfo .qrLeft .texts {
+  margin-top: 6px;
+}
+
+.qrInfo .qrLeft .texts .qrTitle {
+  font-size: 14px;
+  font-family: 'Roboto';
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.qrInfo .qrLeft .texts .qrDesc {
+  font-size: 18px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 8px;
+  max-width: 360px;
+  overflow-wrap: break-word;
+}
+
+.bottomInfos {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.bottomInfos .oneInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.bottomInfos .oneInfo:first-child {
+  margin-top: 0px;
+}
+
+.bottomInfos .oneInfo .leftInfo {
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  color: #656565;
+}
+
+.bottomInfos .oneInfo .rightInfo {
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.bottomInfos .summary {
+  margin-top: 16px;
+}
+
+.bottomInfos .summary .leftInfo {
+  font-family: 'Poppins';
+  font-weight: 500;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.bottomInfos .summary .rightInfo {
+  font-family: 'Poppins';
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.bottomInfos .infoLine {
+  width: 100%;
+  height: 1px;
+  background: #2f2f2f;
+  margin-top: 16px;
+}
+
+.bottomButtons {
+  position: absolute;
+  right: 0px;
+  bottom: 50px;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.bottomButtons .btn {
+  width: auto;
+  height: 48px;
+  padding: 0px 32px;
+
+  border-radius: 66px;
+  background: #ffffff00;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.bottomButtons .rightBtn {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+}
+
+.bottomButtons .btn:hover {
+  background: #ffffff00;
+  opacity: 0.8;
+}
+
+.bottomButtons .rightBtn:hover {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+}
+
+.bottomButtons .btn p {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  text-transform: none;
+}
+
+.bottomButtons .rightBtn p {
+  color: #000;
+}
+
+.bottomButtons .btn span {
+  color: #fff;
+}
+
+@media (max-width: 920px) {
+  .section {
+    height: 100%;
+    margin-top: 8px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    line-height: 22px;
+
+    background: #ffffff;
+    background-clip: text;
+  }
+
+  .desc {
+    margin-top: 4px;
+  }
+
+  .qrInfo {
+    padding: 24px;
+    background: #171717;
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  .qrInfo .qrLeft {
+    display: flex;
+    gap: 16px;
+  }
+
+  .qrInfo .copy {
+    display: none;
+  }
+
+  .qrInfo .qrLeft .qrCode {
+    width: 88px;
+    height: 88px;
+  }
+
+  .qrInfo .qrLeft .texts {
+    margin-top: 6px;
+  }
+
+  .qrInfo .qrLeft .texts .qrTitle {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .qrInfo .qrLeft .texts .qrDesc {
+    font-size: 14px;
+    font-family: 'Roboto';
+    line-height: 20px;
+    margin-top: 9px;
+    max-width: 195px;
+  }
+
+  .bottomInfos {
+    margin-top: 16px;
+  }
+
+  .bottomInfos .oneInfo {
+    margin-top: 8px;
+  }
+
+  .bottomInfos .oneInfo:first-child {
+    margin-top: 0px;
+  }
+
+  .bottomInfos .oneInfo .leftInfo {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .bottomInfos .oneInfo .rightInfo {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .bottomInfos .summary .leftInfo {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #ffffff;
+  }
+
+  .bottomInfos .summary .rightInfo {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #ffffff;
+  }
+
+  .bottomButtons {
+    position: absolute;
+    left: 0px;
+    bottom: 140px;
+
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bottomButtons .btn {
+    width: 100%;
+    flex: 100%;
+  }
+
+  .bottomButtons .rightBtn {
+    margin-top: 8px;
+    order: -1;
+  }
+}

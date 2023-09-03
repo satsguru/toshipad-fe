@@ -1,0 +1,55 @@
+@import 'styles/scss/variables';
+
+.styledCheckbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 8px;
+    border-radius: 15%;
+    &:hover input ~ .checkmark {
+        background-color: #ccc;
+        cursor: pointer;
+    }
+    input:checked ~ .checkmark {
+        background-color: $color--background-primary;
+    }
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+    .checkmark:after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -60%) rotate(45deg);
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+    }
+}
+
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent; 
+    border: 2px solid $color--background-primary;
+    border-radius: 15%;
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.hiddenCheckbox {
+    display: none;
+}

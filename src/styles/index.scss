@@ -1,0 +1,41 @@
+@import './scss/reset.scss';
+
+@import './scss/fonts.scss';
+@import './scss/functions.scss';
+@import './scss/variables.scss';
+
+@import './scss/_mixins.scss';
+
+@import './../components/Style/style.scss';
+@import './../components/Typography/typography.scss';
+
+html {
+  overflow-x: hidden;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  min-height: 100%;
+
+  background: $color--background-primary !important;
+  color: $color--secondary;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,157 @@
+@import 'src/styles/scss/variables';
+
+.card {
+  width: 368px;
+  height: auto;
+  padding: 8px;
+
+  background: #171717;
+  border-radius: 24px;
+  padding-bottom: 24px;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.banner img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.infos {
+  padding: 0 15px;
+}
+
+.logo {
+  position: relative;
+  width: calc(48px + 12px);
+  height: calc(48px + 12px);
+  border-radius: 100%;
+  border: 6px solid #171717;
+  margin-top: -24px;
+  margin-left: -6px;
+
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.infoTitle {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.longInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.infoLeft {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+
+  color: $color--grey6;
+}
+
+.infoRight {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+  color: #ffffff;
+}
+
+.timer {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.tag {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 145%;
+
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: #bababa;
+}
+
+.cardBtn {
+  width: 100%;
+  height: 48px;
+  background: #080601;
+  border-radius: 66px;
+
+  transition: background 0.3s;
+  margin-top: 16px;
+}
+
+.cardBtn:hover {
+  background: #080601aa;
+}
+
+.cardBtn p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #ffffff;
+}
+
+.cardBtn span {
+  color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+  .card {
+    display: none;
+  }
+
+  .card:first-child {
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  .card {
+    position: relative;
+    width: 100%;
+    flex: 100%;
+  }
+}

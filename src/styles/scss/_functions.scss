@@ -1,0 +1,38 @@
+$varname-prefix: '--';
+$selector-prefix: '-';
+
+@mixin make-rule($selector, $value, $rule) {
+  #{$selector} {
+    #{$rule}: #{$value};
+  }
+}
+
+@function selector($value) {
+  @return #{$selector-prefix}#{$value};
+}
+
+@function varname($value) {
+  @return #{$varname-prefix}#{$value};
+}
+
+@function varname-key($name) {
+  @return --ui-#{$name};
+}
+
+@function varname-var($name) {
+  @return var(varname-key($name));
+}
+
+@function text-color($key) {
+  @return map-get($text-colors, $key);
+}
+
+@function pick($map, $props...) {
+  $list: ();
+  @each $prop in $props {
+    @if map-has-key($map, $prop) {
+      $list: append($list, map-get($map, $prop));
+    }
+  }
+  @return $list;
+}

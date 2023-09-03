@@ -1,0 +1,23 @@
+@import 'src/styles/scss/variables';
+
+.layout {
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
+  &__topbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 77px;
+    width: 100%;
+  }
+
+  &__footer-wrapper {
+  }
+
+  &.homepage {
+  }
+}

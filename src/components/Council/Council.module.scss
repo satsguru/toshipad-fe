@@ -1,0 +1,179 @@
+@import 'src/styles/scss/variables';
+
+.council {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.shadow {
+  width: 100%;
+  height: auto;
+  top: -120px;
+  left: 0px;
+  position: absolute;
+}
+
+.shadow img {
+  width: 100%;
+  height: auto;
+}
+
+.bottomShadow {
+  width: 100%;
+  height: auto;
+  bottom: -120px;
+  left: 0px;
+  position: absolute;
+  transform: rotate(180deg);
+}
+
+.bottomShadow img {
+  width: 100%;
+  height: auto;
+}
+
+.bottom {
+  position: relative;
+  width: 90%;
+  max-width: 944px;
+  margin: 0 auto;
+  padding-top: 264px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  width: 443px;
+  height: auto;
+}
+
+.left {
+  margin-top: 83px;
+}
+
+.logo {
+  width: 170px;
+  height: auto;
+}
+
+.powered {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 135%;
+
+  color: #ffffff;
+  margin-top: 32px;
+}
+
+.h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 100%;
+
+  background: linear-gradient(90deg, #b3b0ae 0%, #ffffff 101.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  margin-top: 12px;
+}
+
+.h2 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: #ffffff;
+  margin-top: 12px;
+  max-width: 464px;
+}
+
+.btn {
+  width: auto;
+  height: 56px !important;
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%) !important;
+  border-radius: 66px !important;
+  margin-top: 40px !important;
+  padding: 0 32px !important;
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #000000;
+}
+
+.btn span {
+  color: #000000;
+}
+
+@media (max-width: 850px) {
+  .bottom {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-wrap: wrap-reverse;
+
+    position: relative;
+
+    justify-content: center;
+  }
+
+  .left {
+    flex: 100%;
+    width: 100%;
+    order: -1;
+  }
+
+  .right {
+    width: 80%;
+    order: 0;
+  }
+
+  .logo {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .powered {
+    width: 100%;
+    text-align: center;
+  }
+
+  .h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .h2 {
+    width: 100%;
+    text-align: center;
+    max-width: none;
+  }
+
+  .btn {
+    display: flex;
+    margin: 0 auto !important;
+    margin-top: 24px !important;
+    max-width: 300px !important;
+  }
+}

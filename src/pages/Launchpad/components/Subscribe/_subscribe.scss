@@ -1,0 +1,75 @@
+@import 'styles/scss/variables';
+
+.subscribe-cont {
+  display: flex;
+  width: 100%;
+  padding: 80px;
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  border-radius: 32px;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  margin-top: 56px;
+  @media (max-width: 900px) {
+    padding: 80px 40px;
+    gap: 16px;
+  }
+  @media (max-width: $screen-sm) {
+    flex-direction: column;
+  }
+  @media (max-width: 450px) {
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+    padding: 40px 16px;
+    border-radius: unset;
+  }
+}
+
+.header {
+  width: 50%;
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  height: 56px;
+  gap: 16px;
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    justify-content: center;
+  }
+  @media (max-width: 450px) {
+    gap: 8px;
+  }
+}
+
+.subscribe-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 50%;
+  @media (max-width: $screen-sm) {
+    width: 100%;
+    justify-content: center;
+  }
+  @media (max-width: 450px) {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.subscribe-form-checkbox {
+  display: flex;
+  margin-top: 12px;
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+.label-text {
+  color: #000;
+}

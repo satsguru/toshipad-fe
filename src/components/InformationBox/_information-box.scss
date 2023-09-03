@@ -1,0 +1,24 @@
+@import './src/styles/scss/variables';
+
+.information-box {
+  width: 239px;
+  height: 102px;
+  border-radius: 14px;
+  border: 2px solid $color--grey4;
+  background-color: $color--background-secondary;
+
+  &.active,
+  &:hover {
+    background-color: $color--background-primary;
+    border-color: $color--primary;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
+  &-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+}

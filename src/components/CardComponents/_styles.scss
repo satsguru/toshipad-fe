@@ -1,0 +1,98 @@
+@import 'styles/scss/variables';
+
+.bannerWithLogo {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 24px;
+}
+
+.bannerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 175px;
+  border-radius: 20px;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
+
+.logoWrapper {
+  position: absolute;
+  left: 14px;
+  bottom: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 6px solid $color--grey5;
+  overflow: hidden;
+  z-index: 1;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: solid 1px $color--grey7;
+  font-size: 12px;
+  font-weight: 500;
+  color: $color--grey8;
+  cursor: default;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 8px;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 368px;
+  max-width: 368px;
+  border-radius: 24px;
+  background-color: $color--grey5;
+  padding: 9px;
+  padding-bottom: 24px;
+  @media (max-width: 450px) {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+.cardMainContent {
+  width: 100%;
+}
+.projectCardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 16px;
+  padding-top: 40px;
+}

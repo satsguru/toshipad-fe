@@ -1,0 +1,50 @@
+@import 'styles/scss/variables';
+
+.styledButton {
+  width: 100%;
+  padding: 12px 32px ;
+  border-radius: 32px ;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.primary {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%) ;
+  transition: 0.3s;
+  color: black;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.black {
+  background: $color--background-primary ;
+  transition: 0.3s;
+  color: white;
+  &:hover {
+    background: $color--grey4 ;
+  }
+  &.disabled {
+    color: $color--grey8 ;
+  }
+}
+.grey {
+  background: $color--grey5 ;
+  transition: 0.3s;
+  color: white;
+  &:hover {
+    background: $color--grey4 ;
+  }
+  &.disabled {
+    color: $color--grey8 ;
+  }
+}
+.subscribe {
+  padding: 16px 32px ;
+  max-width: 150px;
+  @media (max-width: 450px) {
+    max-width: unset;
+  }
+}

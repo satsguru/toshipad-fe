@@ -1,0 +1,83 @@
+@import '../../styles/scss/variables.scss';
+
+$text-white-spaces: (normal, nowrap, pre, pre-wrap, pre-line);
+
+@mixin size($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+.el-header {
+  font-family: $header-font-family;
+  font-weight: $text-weights-semi-bold;
+}
+
+.el-t {
+  font-family: $text-font-family;
+  &--size {
+    &-xxs {
+      @include size($font-size--xxs, $base-line-height--xxs);
+    }
+    &-xs {
+      @include size($font-size--xs, $base-line-height--xs);
+    }
+    &-sm {
+      @include size($font-size--sm, $base-line-height--sm);
+    }
+    &-md {
+      @include size($font-size--md, $base-line-height--md);
+    }
+    &-lg {
+      @include size($font-size--lg, $base-line-height--lg);
+    }
+    &-xl {
+      @include size($font-size--xl, $base-line-height--xl);
+    }
+    &-xxl {
+      @include size($font-size--xxl, $base-line-height--xxl);
+    }
+    &-xxxl {
+      @include size($font-size--xxl, $base-line-height--xxxl);
+    }
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--block {
+    display: block;
+  }
+
+  &--ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--line-height-1 {
+    line-height: 1;
+  }
+
+  @each $type in $text-white-spaces {
+    &--white-space-#{$type} {
+      white-space: $type;
+    }
+  }
+}

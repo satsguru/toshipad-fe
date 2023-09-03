@@ -1,0 +1,119 @@
+.section {
+  width: 100%;
+  height: 100%;
+  margin-top: 36px;
+}
+
+.icon {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  background: #000000;
+  border-radius: 100%;
+}
+
+.icon img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  translate: -50% -50%;
+}
+
+.title {
+  font-size: 22px;
+  font-family: 'Poppins';
+  font-weight: 600;
+  line-height: 28px;
+
+  color: #ffffff;
+  margin-top: 64px;
+}
+
+.desc {
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  max-width: 480px;
+
+  color: #ffffff;
+  margin-top: 12px;
+}
+
+.bottomButtons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.bottomButtons .btn {
+  width: auto;
+  height: 48px;
+  padding: 0px 32px;
+
+  border-radius: 66px;
+  background: #ffffff00;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.bottomButtons .rightBtn {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+}
+
+.bottomButtons .btn:hover {
+  background: #ffffff00;
+  opacity: 0.8;
+}
+
+.bottomButtons .rightBtn:hover {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+}
+
+.bottomButtons .btn p {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  text-transform: none;
+}
+
+.bottomButtons .rightBtn p {
+  color: #000;
+}
+
+.bottomButtons .btn span {
+  color: #fff;
+}
+
+@media (max-width: 920px) {
+  .section {
+    height: 100%;
+    margin-top: 8px;
+  }
+
+  .bottomButtons {
+    position: absolute;
+    left: 0px;
+    bottom: 140px;
+
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bottomButtons .btn {
+    width: 100%;
+    flex: 100%;
+  }
+
+  .bottomButtons .rightBtn {
+    margin-top: 8px;
+    order: -1;
+  }
+}

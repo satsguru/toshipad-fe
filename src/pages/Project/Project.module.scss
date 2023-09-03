@@ -1,0 +1,73 @@
+@import 'src/styles/scss/variables';
+
+.main {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.inside {
+  position: relative;
+  width: 90%;
+  height: auto;
+  max-width: 1134px;
+  margin: 0 auto;
+}
+
+.shadow1 {
+  position: absolute;
+  right: -450px;
+  top: 570px;
+  width: 1204px;
+  height: auto;
+  z-index: 0;
+}
+
+.bottom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+  margin-top: 22px;
+}
+
+.left {
+  position: relative;
+  width: auto;
+}
+
+.right {
+  position: relative;
+  min-width: 368px;
+}
+
+.rightMobile {
+  position: relative;
+  min-width: 368px;
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .bottom {
+    display: block;
+    margin-top: 22px;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .rightMobile {
+    display: block;
+    width: 100%;
+    min-width: 0px;
+    margin-top: 24px;
+    padding-bottom: 12px;
+  }
+}

@@ -1,0 +1,28 @@
+@import './src/styles/scss/variables';
+
+.container {
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+@media all and (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+@media all and (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

@@ -1,0 +1,100 @@
+.quote {
+  position: relative;
+  width: 90%;
+  max-width: 1133px;
+  margin: 0 auto;
+  margin-top: 80px;
+
+  padding: 104px 180px;
+
+  background: #171717;
+
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.quoteBg {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 300px;
+  height: auto;
+  transform: rotate(180deg);
+}
+
+.title {
+  position: relative;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 175%;
+
+  background: linear-gradient(90deg, #b3b0ae 0%, #ffffff 101.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.quoteImg {
+  position: relative;
+  width: 56px;
+  height: auto;
+  margin-top: 56px;
+}
+
+.desc {
+  position: relative;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.sign {
+  position: relative;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 125%;
+  margin-top: 32px;
+
+  color: #ffffff;
+}
+
+@media (max-width: 1100px) {
+  .quote {
+    padding: 60px 100px;
+  }
+}
+
+@media (max-width: 880px) {
+  .quote {
+    padding: 48px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  .quoteImg {
+    margin-top: 40px;
+  }
+
+  .desc {
+    margin-top: 24px;
+  }
+
+  .sign {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    margin-top: 24px;
+  }
+}

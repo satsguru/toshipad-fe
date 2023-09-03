@@ -1,0 +1,507 @@
+@import '../../../styles/scss/variables';
+@import './mixins.scss';
+
+// @required
+// $base-directions
+// $base-border--primary
+// $background-colors
+// $text-weights
+// $text-colors
+// $z-indexes
+
+@mixin default-border-style {
+  border-color: $base-border--primary;
+  border-style: solid;
+}
+
+//#region base
+
+//#region base/padding
+
+$padding--property: 'padding';
+$padding--selector: selector($padding--property);
+
+@mixin padding--selectors() {
+  .#{$padding--selector} {
+    @include sizes($padding--property);
+  }
+
+  @include directions($padding--property);
+  @include directions-with-sizes($padding--property);
+}
+
+//#endregion base/padding
+
+//#region base/margin
+
+$margin--property: 'margin';
+$margin--selector: selector($margin--property);
+
+@mixin margin--selectors() {
+  .#{$margin--selector} {
+    @include sizes($margin--property);
+  }
+
+  @include directions($margin--property);
+  @include directions-with-sizes($margin--property);
+}
+
+//#endregion base/margin
+
+//#region base/border
+
+$border--property: 'border-width';
+$border--selector: selector($border--property);
+
+@mixin border--selectors() {
+  .#{$border--selector} {
+    @include default-border-style;
+    #{varname-key($border--property)}: 1px;
+  }
+
+  @include directions($border--property);
+}
+
+//#endregion base/border
+
+//#endregion base
+
+//#region inner
+
+//#region inner/padding
+
+$inner-padding--property: 'inner-padding';
+$inner-padding--selector: selector($inner-padding--property);
+
+@mixin inner-padding--selectors() {
+  $scope: #{'.'}#{$inner-padding--selector};
+
+  #{$scope} {
+    @include children-sizes($inner-padding--property);
+  }
+
+  #{$scope} {
+    & > * {
+      padding-left: varname-var($inner-padding--property);
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  #{$scope}.#{selector('flex-direction-row-reverse')} {
+    & > * {
+      padding-left: varname-var($inner-padding--property);
+
+      &:last-child {
+        padding-left: 0;
+      }
+    }
+  }
+
+  #{$scope}.#{selector('flex-direction-column')} {
+    & > * {
+      padding-left: initial;
+      padding-top: varname-var($inner-padding--property);
+
+      &:first-child {
+        padding-top: initial;
+      }
+    }
+  }
+
+  #{$scope}.#{selector('flex-direction-column-reverse')} {
+    & > * {
+      padding-left: initial;
+      padding-top: varname-var($inner-padding--property);
+
+      &:last-child {
+        padding-top: initial;
+      }
+    }
+  }
+}
+
+//#endregion inner/padding
+
+//#region inner/margin
+
+$inner-margin--property: 'inner-margin';
+$inner-margin--selector: selector($inner-margin--property);
+
+@mixin inner-margin--selectors() {
+  $scope: #{'.'}#{$inner-margin--selector};
+
+  #{$scope} {
+    @include children-sizes($inner-margin--property);
+  }
+
+  #{$scope} {
+    & > * {
+      margin-left: varname-var($inner-margin--property);
+
+      &:first-child {
+        margin-left: initial;
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-row-reverse')} {
+    & > * {
+      margin-left: varname-var($inner-margin--property);
+
+      &:last-child {
+        margin-left: initial;
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-column')} {
+    & > * {
+      margin-left: initial;
+      margin-top: varname-var($inner-margin--property);
+
+      &:first-child {
+        margin-top: initial;
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-column-reverse')} {
+    & > * {
+      margin-left: initial;
+      margin-top: varname-var($inner-margin--property);
+
+      &:last-child {
+        margin-top: initial;
+      }
+    }
+  }
+}
+
+//#endregion inner/margin
+
+//#region inner/border
+
+$inner-border--property: 'inner-border';
+$inner-border--selector: selector($inner-border--property);
+
+@mixin inner-border--selectors($root: '') {
+  $scope: #{'.'}#{$inner-border--selector};
+
+  #{$scope} {
+    #{varname-key($inner-border--property)}: 1px;
+  }
+
+  #{$scope} {
+    & > * {
+      @include default-border-style;
+
+      border-left-width: varname-var($inner-border--property);
+
+      &:first-child {
+        border-left-width: 0;
+      }
+    }
+
+    &.#{$inner-padding--selector} {
+      & > * {
+        padding-right: varname-var($inner-padding--property);
+
+        &:last-child {
+          padding-right: initial;
+        }
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-row-reverse')} {
+    & > * {
+      border-left-width: varname-var($inner-border--property);
+
+      &:last-child {
+        border-left-width: 0;
+      }
+    }
+
+    &.#{$inner-padding--selector} {
+      & > * {
+        padding-right: varname-var($inner-padding--property);
+
+        &:first-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-column')} {
+    & > * {
+      border-left-width: 0;
+      border-bottom-width: varname-var($inner-border--property);
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+
+    &.#{$inner-padding--selector} {
+      & > * {
+        padding-right: 0;
+        padding-bottom: varname-var($inner-padding--property);
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // TODO flex selector from variable
+  #{$scope}.#{selector('flex-direction-column-reverse')} {
+    & > * {
+      border-left-width: 0;
+      border-bottom-width: varname-var($inner-border--property);
+
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+
+    &.#{$inner-padding--selector} {
+      & > * {
+        padding-right: 0;
+        padding-bottom: varname-var($inner-padding--property);
+
+        &:first-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+//#endregion inner/border
+
+//#endregion inner
+
+//#region flex
+
+@mixin flex--selectors() {
+  .#{selector('flex')} {
+    display: flex;
+    flex: 0 1 auto;
+  }
+}
+
+// flex-direction
+
+@mixin flex-direction--defaults {
+  flex-direction: 'row';
+}
+
+$flex-direction--property: 'flex-direction';
+$flex-direction--selector: selector($flex-direction--property);
+$flex-direction--options: ('column', 'column-reverse', 'row', 'row-reverse');
+
+@mixin flex-direction--selectors($root: '') {
+  #{$root}.#{$flex-direction--selector} {
+    @each $value in $flex-direction--options {
+      @include make-rule('&-#{$value}', $value, $flex-direction--property);
+    }
+  }
+}
+
+// flex-align
+
+@mixin flex-align--defaults {
+  align-items: #{'stretch'};
+}
+
+$flex-align--property: 'align-items';
+$flex-align--selector: selector('flex-align');
+$flex-align--options: (
+  'stretch',
+  'baseline',
+  'center',
+  'flex-start',
+  'flex-end'
+);
+
+@mixin flex-align--selectors($root: '') {
+  #{$root}.#{$flex-align--selector} {
+    @each $value in $flex-align--options {
+      @include make-rule('&-#{$value}', $value, $flex-align--property);
+    }
+  }
+}
+
+// flex-justify
+
+@mixin flex-justify--defaults {
+  justify-content: #{'flex-start'};
+}
+
+$flex-justify--property: 'justify-content';
+$flex-justify--selector: selector('flex-justify');
+$flex-justify--options: (
+  'flex-start',
+  'flex-end',
+  'center',
+  'space-between',
+  'space-around',
+  'space-evenly'
+);
+
+@mixin flex-justify--selectors($root: '') {
+  #{$root}.#{$flex-justify--selector} {
+    @each $value in $flex-justify--options {
+      @include make-rule('&-#{$value}', $value, $flex-justify--property);
+    }
+  }
+}
+
+// flex-grow
+
+$flex-grow--property: 'flex-grow';
+$flex-grow--selector: selector($flex-grow--property);
+$flex-grow--options: ('0', '1');
+
+@mixin flex-grow--selectors($root: '') {
+  #{$root}.#{$flex-grow--selector} {
+    @each $value in $flex-grow--options {
+      @include make-rule('&-#{$value}', $value, $flex-grow--property);
+    }
+  }
+}
+
+// flex-wrap
+
+$flex-wrap--property: 'flex-wrap';
+$flex-wrap--selector: selector($flex-wrap--property);
+$flex-wrap--options: ('wrap', 'wrap-reverse', 'nowrap');
+
+@mixin flex-wrap--selectors($root: '') {
+  #{$root}.#{$flex-wrap--selector} {
+    @each $value in $flex-wrap--options {
+      @include make-rule('&-#{$value}', $value, $flex-wrap--property);
+    }
+  }
+}
+
+//#endregion flex
+
+//#region grid
+
+$grid--selector: selector('grid');
+$grid-width--variable: 'width';
+$grid-width--selector: selector('width');
+$grid-gutter--variable: 'grid-gutter';
+
+@mixin grid-width--selectors() {
+  .#{$grid--selector} {
+    @include sizes($grid-gutter--variable);
+  }
+
+  @include grid();
+}
+
+//#endregion grid
+
+//#region position
+
+$position--selector: selector('position');
+
+@mixin position--selectors() {
+  $values: ('relative', 'absolute', 'fixed', 'sticky');
+
+  .#{$position--selector} {
+    @each $position in $values {
+      @include make-rule('&-#{$position}', #{$position}, 'position');
+      @each $direction in $base-directions {
+        &-#{$position}-#{$direction} {
+          #{$direction}: 0;
+          position: #{$position};
+        }
+      }
+    }
+  }
+}
+
+$overflow--selector: selector('overflow');
+
+@mixin overflow--selectors() {
+  $values: ('auto', 'scroll', 'hidden', 'visible');
+  $axes: ('x', 'y');
+
+  @each $value in $values {
+    .#{$overflow--selector}-#{$value} {
+      overflow: #{$value};
+    }
+
+    @each $axis in $axes {
+      .#{$overflow--selector}-#{$axis}-#{$value} {
+        overflow-#{$axis}: #{$value};
+      }
+    }
+  }
+}
+
+//#endregion position
+
+//#region typography
+
+$text-color--selector: selector('text-color');
+
+@mixin text-colors--selectors() {
+  @each $name, $value in $color-variants {
+    .#{$text-color--selector}-#{$name} {
+      color: $value;
+    }
+  }
+}
+
+$text-weight--selector: selector('text-weight');
+
+@mixin text-weights--selectors() {
+  @each $name, $value in $text-weights {
+    .#{$text-weight--selector}-#{$name} {
+      font-weight: $value;
+    }
+  }
+}
+
+$word-break--selector: selector('word-break');
+
+@mixin word-break--selectors() {
+  $values: (
+    'word': break-word,
+    'all': break-all
+  );
+
+  @each $name, $value in $values {
+    @include make-rule(
+      '.#{$word-break--selector}-#{$name}',
+      $value,
+      'word-break'
+    );
+  }
+}
+
+$background-color--selector: selector('background-color');
+
+@mixin background-colors--selectors() {
+  @each $name, $value in $color-variants {
+    .#{$background-color--selector}-#{$name} {
+      background-color: $value;
+    }
+  }
+}
+
+//#endregion typography

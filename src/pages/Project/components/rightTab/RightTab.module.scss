@@ -1,0 +1,285 @@
+@import 'src/styles/scss/variables';
+
+.rightTab {
+  position: relative;
+  width: 100%;
+
+  background: #171717;
+  border-radius: 32px;
+  padding: 32px;
+}
+
+.topInfos {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topLeft {
+  max-width: calc(100% - 105px - 12px - 5px);
+}
+
+.topLeft .title {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 125%;
+
+  background: linear-gradient(90deg, #b3b0ae 0%, #ffffff 101.12%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.topLeft .desc {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #ffffff;
+}
+
+.secondaryTitle {
+  color: #fff;
+
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.topRight {
+  position: relative;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  height: 34px;
+  min-width: 105px;
+
+  padding: 7px 13px;
+  padding-left: 24px;
+  border-radius: 56px;
+}
+
+.topRight::before {
+  position: absolute;
+  content: '';
+  left: 12px;
+  top: 15px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+}
+
+.topRight[data-value='In progress'] {
+  background: rgba(26, 160, 75, 0.1);
+  color: #1aa04b;
+}
+
+.topRight[data-value='In progress']::before {
+  background: #1aa04b;
+}
+
+.topRight[data-value='Completed'] {
+  background: rgba(26, 160, 75, 0.1);
+  color: #1aa04b;
+}
+
+.topRight[data-value='Completed']::before {
+  background: #1aa04b;
+}
+
+.topRight[data-value='Upcoming'] {
+  background: rgba(160, 160, 75, 0.1);
+  color: #c7a01f;
+}
+
+.topRight[data-value='Upcoming']::before {
+  background: #c7a01f;
+}
+
+.timer {
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+
+  margin-top: 16px;
+}
+
+.progress .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress .top .title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #656565;
+}
+
+.progress .top .right .desc {
+  text-align: right;
+}
+
+.progress .top .right .title {
+  text-align: right;
+}
+
+.progress .progressTitle {
+  font-size: 16px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.progress .progressBar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+
+  background: #000000;
+  border-radius: 25px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress .progressBar .inside {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  height: 100%;
+
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  border-radius: 25px;
+}
+
+.infos {
+  position: relative;
+  width: 100%;
+
+  margin-top: 16px;
+}
+.infos .status {
+  display: flex;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.infos .oneInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.infos .oneInfo .left {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #656565;
+}
+
+.infos .oneInfo .right {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #ffffff;
+}
+
+.bottomBtn {
+  position: relative;
+  width: 100%;
+  height: 56px;
+
+  margin-top: 16px;
+
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  border-radius: 66px;
+
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.bottomBtn:hover {
+  background: linear-gradient(90deg, #eda15c 0%, #a85b08 100%);
+  opacity: 0.8;
+}
+
+.bottomBtn span {
+  color: #ffffff;
+}
+
+.bottomBtn p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #000000;
+}
+
+@media (max-width: 700px) {
+  .roadmap {
+    width: 112%;
+    margin-left: -6%;
+    padding: 24px;
+    border-radius: 0px;
+  }
+
+  .rightTab {
+    width: 112%;
+    margin-left: -6%;
+
+    padding: 24px;
+    border-radius: 0px;
+  }
+}
+
+.paymentInfo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  padding: 24px;
+
+  border-radius: 16px;
+  background: #2f2f2f;
+  transition: border 0.3s;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.paymentIcons {
+  width: 20px;
+  height: 20px;
+}

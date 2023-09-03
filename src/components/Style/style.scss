@@ -1,0 +1,26 @@
+@import './scss/_fixtures.scss';
+
+@include padding--selectors();
+@include margin--selectors();
+@include border--selectors();
+
+@include flex--selectors();
+@include flex-direction--selectors();
+@include flex-align--selectors();
+@include flex-justify--selectors();
+@include flex-grow--selectors();
+@include flex-wrap--selectors();
+
+@include inner-padding--selectors();
+@include inner-margin--selectors();
+@include inner-border--selectors();
+
+@include grid-width--selectors();
+
+@include overflow--selectors();
+@include position--selectors();
+
+@include text-colors--selectors();
+@include text-weights--selectors();
+@include word-break--selectors();
+@include background-colors--selectors();

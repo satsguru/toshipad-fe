@@ -1,0 +1,73 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react", "tslint-react-hooks"],
+  "jsRules": {},
+  "rules": {
+    "array-type": [true, "array-simple"],
+    "arrow-parens": false,
+    "import-blacklist": [true],
+    "interface-name": false,
+    "jsx-alignment": false,
+    "jsx-boolean-value": false,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "no-empty-interface": false,
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "object-literal-key-quotes": false,
+    "semicolon": false,
+    "no-console": false,
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
+    "react-hooks-nesting": true,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "grouped-imports": true,
+        "groups": [
+          {
+            "name": "external",
+            "match": "^(?!(assets|hooks|components|pages|styles|..?)\\/.*$).*",
+            "order": 1
+          },
+          {
+            "name": "hooks",
+            "match": "^hooks/",
+            "order": 2
+          },
+          {
+            "name": "pages",
+            "match": "^pages/",
+            "order": 3
+          },
+          {
+            "name": "components",
+            "match": "^components/",
+            "order": 4
+          },
+          {
+            "name": "assets",
+            "match": "^assets/",
+            "order": 5
+          },
+          {
+            "name": "local",
+            "match": "^[.](?!.*[.](css|scss|sass)$).*$",
+            "order": 6
+          },
+          {
+            "name": "styles",
+            "match": "^styles/",
+            "order": 7
+          },
+          {
+            "name": "styles",
+            "match": ".*\\.(css|scss|sass)$",
+            "order": 8
+          }
+        ]
+      }
+    ]
+  },
+  "rulesDirectory": []
+}

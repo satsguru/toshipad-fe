@@ -1,0 +1,119 @@
+@import 'styles/scss/variables';
+
+.completedCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.tableWithButton {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 32px;
+}
+.tableWrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  overflow-x: scroll;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tableWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  gap: 8px;
+}
+.tableLogoWrapper {
+  display: flex;
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//table styles
+table {
+  width: 100%;
+}
+
+thead {
+  background-color: $color--grey5;
+  text-align: left;
+}
+
+thead tr:first-child {
+  height: 52px;
+}
+
+thead tr {
+  height: 8px;
+}
+
+th,
+td {
+  font-family: $header-font-family !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  vertical-align: middle !important;
+  align-items: center !important;
+  padding: 0 16px !important;
+  white-space: nowrap;
+}
+
+th:first-child {
+  border-radius: 16px 0 0 16px;
+}
+th:last-child {
+  border-radius: 0 16px 16px 0;
+}
+
+tbody tr {
+  height: 64px;
+  border-bottom: 1px solid $color--grey7;
+  &:hover {
+    background-color: $color--grey5;
+    cursor: pointer;
+  }
+}
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 24px;
+}
+th:last-child,
+td:last-child {
+  padding-right: 24px;
+  text-align: right;
+}
+
+td:nth-child(2) {
+  font-family: $text-font-family !important;
+  font-weight: 400 !important;
+}
+
+.button-wrapper {
+  display: flex;
+  max-width: 140px;
+  @media (max-width: 450px) {
+    width: 100%;
+    max-width: unset;
+  }
+}

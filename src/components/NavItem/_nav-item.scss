@@ -1,0 +1,10 @@
+@import './src/styles/scss/variables';
+
+.nav-item {
+  text-decoration: none !important;
+  color: $color--secondary;
+}
+
+.active > .nav-item {
+  color: $color--primary;
+}

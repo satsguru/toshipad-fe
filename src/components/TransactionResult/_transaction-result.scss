@@ -1,0 +1,21 @@
+@import './src/styles/scss/variables';
+
+.transaction-result {
+  border: 2px solid $color--primary;
+  border-radius: 14px;
+  font-weight: 600;
+  font-family: $text-font-family;
+  font-size: $font-size--xxs;
+  color: $color--secondary;
+  &__error {
+    border: 2px solid $color--error;
+  }
+
+  &__success {
+    border: 2px solid $color--success;
+  }
+  .link-text {
+    font-size: 10px;
+    font-weight: $text-weights-medium;
+  }
+}

@@ -1,0 +1,25 @@
+@import 'src/styles/scss/variables';
+
+.topRoute {
+  position: relative;
+  width: 100%;
+  margin-top: 16px;
+
+  display: flex;
+  gap: 8px;
+}
+
+.topRoute a {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #ffffff;
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+}

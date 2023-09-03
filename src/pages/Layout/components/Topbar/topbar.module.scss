@@ -1,0 +1,317 @@
+@import '../../../../styles/scss/variables.scss';
+
+.nav {
+  position: relative;
+  width: 90%;
+
+  max-width: 1340px;
+  margin: 0 auto;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobileNav {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  padding: 0 5%;
+
+  flex-wrap: wrap;
+}
+
+.mobileNav::before {
+  position: absolute;
+  content: '';
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: $color--background-primary !important;
+}
+
+.logo {
+  width: 169px;
+  height: 26px;
+  margin-top: 20px;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+
+  display: flex;
+  gap: 40px;
+  margin-top: 33px;
+}
+
+.center a {
+  position: relative;
+  color: #ffffff;
+  transition: color 0.3s;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.center a:hover {
+  color: #ec7f08;
+}
+
+.center a[data-value='active'] {
+  font-weight: 600;
+  background: var(
+    --gradient-primary,
+    linear-gradient(90deg, #eda15c 0%, #a85b08 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.center a[data-value='active']::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 26px;
+  translate: 0 -50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background: var(
+    --gradient-primary,
+    linear-gradient(90deg, #eda15c 0%, #a85b08 100%)
+  );
+}
+
+.right {
+  display: flex;
+  gap: 24px;
+}
+
+.noti {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 27px;
+
+  transition: opacity 0.3s;
+}
+
+.noti:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.noti .icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.noti .icon span {
+  width: 6px;
+  height: 6px;
+  background: #eda15c;
+  border-radius: 100%;
+
+  position: absolute;
+  right: 1px;
+  top: -1px;
+}
+
+.noti p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: capitalize;
+  margin-top: 4px;
+  text-transform: none;
+
+  color: #ffffff;
+}
+
+.wallet {
+  width: auto;
+  height: 48px;
+  background: #161616;
+  border-radius: 66px;
+
+  display: flex;
+  gap: 8px;
+
+  margin-top: 16px;
+  padding: 0 24px;
+}
+
+.wallet:hover {
+  background: #161616dd;
+}
+
+.wallet p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #ffffff;
+}
+
+.wallet span {
+  color: #ffffff;
+}
+
+.wallet .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.burger {
+  display: none;
+  width: 24px;
+  height: 24px;
+  margin-top: 24px;
+
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.burger:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.notis {
+  position: absolute;
+  width: 90%;
+
+  right: 0px;
+  top: 85px;
+
+  max-width: 413px;
+  padding: 24px;
+  padding-bottom: calc(24px - 16px);
+
+  border-radius: 8px;
+  background: #171717;
+}
+
+.notiBtn {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  width: calc(100% - 64px);
+  height: 48px;
+  background: #08080888;
+  border-radius: 66px;
+
+  display: none;
+}
+
+.notiBtn:hover {
+  background: #080808dd;
+}
+
+.notiBtn p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: none;
+
+  color: #ffffff;
+}
+
+.notiBtn span {
+  color: #ffffff;
+}
+
+@media (max-width: 1500px) {
+  .nav {
+    max-width: 1136px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .center {
+    position: relative;
+    left: auto;
+    translate: none;
+  }
+}
+
+@media (max-width: 1070px) {
+  .notis {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+
+    left: 0px;
+    top: 0px;
+
+    max-width: 100%;
+    border-radius: 0px;
+  }
+
+  .notiBtn {
+    display: block;
+  }
+
+  .center {
+    display: none;
+  }
+
+  .centerMobile {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 48px;
+  }
+
+  .centerMobile a {
+    width: 100%;
+    flex: 100%;
+    text-align: center;
+  }
+
+  .right {
+    position: relative;
+    width: 100%;
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  .rightMobile {
+    display: block;
+  }
+
+  .noti {
+    width: 100%;
+    flex: 100%;
+    justify-content: center;
+    margin-top: 70px;
+  }
+
+  .wallet {
+    width: 100%;
+    flex: 100%;
+    justify-content: center;
+    margin-top: 48px;
+  }
+
+  .burger {
+    display: block;
+  }
+}
